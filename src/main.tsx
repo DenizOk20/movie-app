@@ -6,16 +6,24 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css'
+import SearchMovie from './components/searchMovie/SearchMovie.tsx';
+import Home from './components/home/Home.tsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
-  },
-  {
-    path:"/",
-    element: <App/>,
-  },
+    children: [
+    {
+      path:"/",
+      element: <Home/>,
+    },
+    {
+      path:"/Search Movie",
+      element: <SearchMovie/>,
+    }, 
+  ]
+}
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

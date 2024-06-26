@@ -4,4 +4,8 @@
   box-sizing: border-box;
 }
 
-
+a{
+  color: white;
+  font-weight: 400;
+  text-decoration: none;
+}

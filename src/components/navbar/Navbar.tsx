@@ -9,6 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from 'react-router-dom';
 
 const pages = ['Search Movie', 'Rated','Popular'];
 
@@ -63,7 +64,7 @@ function Navbar() {
               textDecoration: 'none',
             }}
           >
-            Films
+            MovieApp
           </Typography>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -96,7 +97,11 @@ function Navbar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center">
+                    <Link to={`/${page}`}>
+                    {page}
+                    </Link>
+                    </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -108,7 +113,9 @@ function Navbar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                <Link to={`/${page}`}>
+                    {page}
+                    </Link>
               </Button>
             ))}
           </Box>
