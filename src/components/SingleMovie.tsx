@@ -19,15 +19,13 @@ const SingleMovie = () => {
           original title: <b>{location.original_title}</b>
         </Typography>
       </Box>
-      <Box sx={{ display: "flex" }}>
-        <Box>
+      <Box sx={{ display: "flex" , flexDirection:{xs:'column',sm:'row'}}}>
           <Box
             component="img"
             src={`https://image.tmdb.org/t/p/w500/${location.poster_path}`}
-            width="350px"
+            maxWidth="325px"
           />
-        </Box>
-        <Box sx={{display:'flex',flexDirection:'column',gap:'20px',padding:'20px'}}>
+        <Box sx={{display:'flex',flexDirection:'column',gap:'20px',padding:{xs:'16px 0', sm:'20px'}}}>
           <Typography><b>{location.release_date.substring(0, 4)}</b></Typography>
           <Typography fontSize="1.2rem">{location.overview}</Typography>
           <WatchButton/>

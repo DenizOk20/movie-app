@@ -31,62 +31,52 @@ console.log(movie)
 
   return (
     <Box
-    
       sx={{
         position: 'relative',
         width: '100%',
-        height: {xs: 'calc(100vh - 64px)', md:'calc(100vh - 68.5px)'},
-        backgroundImage: `url(https://image.tmdb.org/t/p/w500/${movie?.poster_path})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        // height: {xs: 'calc(100vh - 64px)', md:'calc(100vh - 68.5px)'},
+        // backgroundImage: `url(https://image.tmdb.org/t/p/w500/${movie?.poster_path})`,
+        // backgroundSize: 'cover',
+        // backgroundPosition: 'center',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
+        // justifyContent: 'center',
         color: 'white',
         textAlign: 'center',
-        objectFit: 'fill',
       }}
-    >
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      >
+      <Box component="img" 
+        src={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`}
+        sx={{objectFit:'cover',
+          width:'50%',
+          height: {xs: 'calc(100vh - 64px)', md:'calc(100vh - 68.5px)'},
+          padding:'8px 20px',
         }}
       />
       <Container
         sx={{
-          position: 'absolute',
-          left: '0',
-          bottom: {xs:'70px',sm:'70px',md:'30px',lg:'70px'},
           maxWidth:{md:'450px',lg:'500px',xl:'650px'},
           zIndex: 1,
+          color:'black',
+          height: {xs: 'calc(100vh - 64px)', md:'calc(100vh - 68.5px)'},
+          display:'flex',
+          flexDirection:'column',
+          justifyContent:'space-evenly',
+          padding:'20px 0',
+          textAlign:'left'
         }}
       >
         <Typography variant="h2" component="h1" gutterBottom sx={{
-          fontSize: {xs: '1.8rem',sm:'2rem',md:'2.8rem'}
+          fontSize: {xs: '1.8rem',sm:'2rem',md:'3.8rem'},
         }}>
           {movie?.title}
         </Typography>
         <Typography variant="h5" sx={{
-          fontSize: {xs: '1rem',sm:'1.1rem',md:'1.2rem'}
+          fontSize: {xs: '1rem',sm:'1.1rem',md:'1.4rem'}
         }}>
           {movie?.overview}
         </Typography>
-      </Container>
-      <Container
-        sx={{
-          maxWidth: {xl: '200px',lg:'200px',md:'200px'},
-          position: 'absolute',
-          right: '40',
-          bottom: {xs:'30px', md: '70px'},
-          zIndex: 1,
-        }}
-      >
-       {movie && <FilmButton movie={movie}/>}
+        {movie && <FilmButton movie={movie}/>}
       </Container>
     </Box>
   )

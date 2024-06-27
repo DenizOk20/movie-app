@@ -21,7 +21,7 @@ const FilmButton = ({movie}: ButtonProps) => {
     navigate(`/single-movie/${movie.title}`,{state:movie})
   }
   return (
-    <Button variant='contained' onClick={handleNavigate}>
+    <Button sx={{maxWidth:'200px'}} variant='contained' onClick={handleNavigate}>
     review
   </Button>
   )

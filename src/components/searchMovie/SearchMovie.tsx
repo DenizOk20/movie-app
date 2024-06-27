@@ -1,9 +1,11 @@
-import { Autocomplete, Box, Container, TextField, Typography } from "@mui/material";
+import { Autocomplete, Box, Container, InputAdornment, TextField, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import RatedMovies from "../films/RatedMovies";
 import PopularMovies from "../films/PopularMovies";
 import { Link } from "react-router-dom";
+import ForMoreButton from "../buttons/ForMoreButton";
+import SearchIcon from "@mui/icons-material/Search";
 
 interface Movie {
   id: number;
@@ -49,7 +51,7 @@ const SearchMovie = () => {
   return (
       <Container
         sx={{
-          backgroundColor: "#c5c5c5",
+          // backgroundColor: "#3e99b5",
           minWidth: "100%",
           display:'flex',
           flexDirection: 'column',
@@ -59,9 +61,8 @@ const SearchMovie = () => {
       >
         <Autocomplete
             sx={{
-                minWidth:'500px',
                 padding:'20px 0',
-                textAlign: 'center'
+                textAlign: 'center',
             }}
           freeSolo
           id="free-solo-2-demo"
@@ -99,6 +100,11 @@ const SearchMovie = () => {
               InputProps={{
                 ...params.InputProps,
                 type: "search",
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchIcon />
+                  </InputAdornment>
+                ),
               }}
             />
           )}
@@ -108,15 +114,16 @@ const SearchMovie = () => {
           <PopularMovies/>
           <Typography sx={{
             padding:'12px 12px 20px',
-            backgroundColor:'#005C78',
+            // backgroundColor:'#3e99b5',
             textAlign:'center',
             fontSize:'1.5rem',
           }}>
             <Link to="/search/movie-list"
-                style={{border:'1px solid white',padding:'6px'}}
                 onMouseOver={(e) => (e.currentTarget.style.opacity = "0.8")}
                 onMouseOut={(e) => (e.currentTarget.style.opacity = "1")}
-                >For more Result</Link>
+                >
+                  <ForMoreButton/>
+                </Link>
           </Typography>
         </Box>
       </Container>
