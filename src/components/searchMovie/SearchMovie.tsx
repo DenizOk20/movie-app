@@ -17,11 +17,26 @@ const SearchMovie = () => {
 
   const getMovies = async () => {
     try {
-      await fetch(
+      const response1 = await fetch(
         `https://api.themoviedb.org/3/movie/popular?api_key=7e06de6291f7ffe73c1196bf4bf2f7dc`
-      )
-        .then((res) => res.json())
-        .then((json) => setMovies(json.results));
+      );
+      const data1 = await response1.json();
+      setMovies(data1.results);
+  
+      const response2 = await fetch(
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=7e06de6291f7ffe73c1196bf4bf2f7dc`
+      );
+      const data2 = await response2.json();
+  
+      setMovies((prevMovies) => {
+        if (!prevMovies) {
+          prevMovies = [];
+        }
+        const newMovies = data2.results.filter(
+          (movie: Movie) => !prevMovies.some((prevMovie: Movie) => prevMovie.title === movie.title)
+        );
+        return [...prevMovies, ...newMovies];
+      });
     } catch (error) {
       console.error(error);
     }

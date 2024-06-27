@@ -79,7 +79,7 @@ console.log(movies)
                   height: 'auto', 
                   maxHeight:'400px',
                 }}
-                alt="Descriptive alt text"
+                alt="movie"
                 src={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`}
             />
             <Typography variant='h6' component="h6" sx={{}}>
