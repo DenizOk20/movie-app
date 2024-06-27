@@ -86,7 +86,7 @@ console.log(movie)
           zIndex: 1,
         }}
       >
-       <FilmButton/>
+       {movie && <FilmButton movie={movie}/>}
       </Container>
     </Box>
   )

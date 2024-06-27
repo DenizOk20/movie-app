@@ -9,6 +9,7 @@ import './index.css'
 import SearchMovie from './components/searchMovie/SearchMovie.tsx';
 import Home from './components/home/Home.tsx';
 import MovieList from './components/movieList/MovieList.tsx';
+import SingleMovie from './components/SingleMovie.tsx';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
     {
       path:"/search/movie-list",
       element: <MovieList/>,
+    },
+    {
+      path: "single-movie/:title",
+      element: <SingleMovie/>,
     },
   ]
 }

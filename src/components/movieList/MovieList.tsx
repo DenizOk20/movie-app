@@ -87,7 +87,7 @@ const MovieList = () => {
                         <Typography variant="h4" component="h4">{movie.title}</Typography>
                         <Typography variant="body1" component="p" sx={{maxWidth:'400px'}}>{movie.overview}</Typography>
                         <Typography>
-                            <FilmButton/>
+                            <FilmButton movie={movie}/>
                         </Typography>
                     </Box>
                 </Box>

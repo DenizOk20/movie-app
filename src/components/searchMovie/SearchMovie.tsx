@@ -78,7 +78,10 @@ const SearchMovie = () => {
             if (newValue === `For More ${inputValue}`) {
               navigate(`/search/movie-list?title=${inputValue}`);
             }else{
-                navigate(`/movie/${newValue}`)
+              const selectedMovie = movies?.find(movie => movie.title === newValue);
+              if (selectedMovie) {
+                navigate(`/single-movie/${selectedMovie.title}`, { state: selectedMovie });
+              }
             }
           }}
           renderInput={(params) => (

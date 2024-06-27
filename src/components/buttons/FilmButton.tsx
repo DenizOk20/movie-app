@@ -1,9 +1,27 @@
 import { Button } from '@mui/material'
 import React from 'react'
+import { useNavigate } from 'react-router'
 
-const FilmButton = () => {
+interface ButtonProps{
+  movie: Movie
+}
+
+interface Movie {
+  id: number;
+  title: string;
+  poster_path: string;
+  overview: string;
+}
+
+const FilmButton = ({movie}: ButtonProps) => {
+
+  const navigate = useNavigate()
+
+  const handleNavigate = () => {
+    navigate(`/single-movie/${movie.title}`,{state:movie})
+  }
   return (
-    <Button variant='contained'>
+    <Button variant='contained' onClick={handleNavigate}>
     review
   </Button>
   )
