@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import FilmButton from '../buttons/FilmButton';
 
 
@@ -40,12 +40,10 @@ console.log(movies)
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        // color: 'white',
         textAlign: 'center',
       }}
     >
         <Typography variant='h3' component="h3" sx={{
-            // backgroundColor: '#3e99b5',
             width: '100%',
             display: 'flex',
             justifyContent: 'flex-start',
@@ -64,7 +62,6 @@ console.log(movies)
         flexWrap: 'wrap',
         width: '100%',
         height: '100%',
-        // backgroundColor: '#3e99b5',
         minWidth: '100%'
     }}>
      {movies?.slice(0,6).map(movie => (

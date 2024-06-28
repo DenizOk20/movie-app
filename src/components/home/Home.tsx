@@ -1,4 +1,3 @@
-import React from 'react'
 import Films from '../films/Films'
 
 const Home = () => {

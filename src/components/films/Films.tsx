@@ -1,4 +1,3 @@
-import React from 'react'
 import IntroFilm from './IntroFilm'
 import RatedMovies from './RatedMovies'
 import PopularMovies from './PopularMovies'

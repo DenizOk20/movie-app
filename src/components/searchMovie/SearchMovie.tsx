@@ -1,5 +1,5 @@
 import { Autocomplete, Box, Container, InputAdornment, TextField, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import RatedMovies from "../films/RatedMovies";
 import PopularMovies from "../films/PopularMovies";

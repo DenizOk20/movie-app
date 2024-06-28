@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import FilmButton from '../buttons/FilmButton';
 
 interface Movie{
@@ -34,13 +34,8 @@ console.log(movie)
       sx={{
         position: 'relative',
         width: '100%',
-        // height: {xs: 'calc(100vh - 64px)', md:'calc(100vh - 68.5px)'},
-        // backgroundImage: `url(https://image.tmdb.org/t/p/w500/${movie?.poster_path})`,
-        // backgroundSize: 'cover',
-        // backgroundPosition: 'center',
         display: 'flex',
         alignItems: 'center',
-        // justifyContent: 'center',
         color: 'white',
         textAlign: 'center',
       }}
